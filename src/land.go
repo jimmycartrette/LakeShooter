@@ -19,6 +19,8 @@ type Land struct {
 	RightWidth int
 }
 
+var breakwasm *int
+
 const nubwidth = 20
 
 func NewLand(boardwidth, boardheight int) Land {
@@ -52,6 +54,8 @@ func (land *Land) render(boardwidth, boardheight int) {
 		land.LeftWidth = land.Width
 		land.RightWidth = land.Width
 	}
+	badint := 20
+	breakwasm = &badint
 
 	rect(0, 0, drawwidth, 160)
 	rect(boardwidth-int(drawwidth), 0, drawwidth, 160)
